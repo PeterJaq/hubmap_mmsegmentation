@@ -2,8 +2,9 @@
 log_config = dict(
     interval=50,
     hooks=[
-        dict(type='TextLoggerHook', by_epoch=False),
-        # dict(type='TensorboardLoggerHook')
+        # dict(type='TextLoggerHook', by_epoch=False),
+        
+        dict(type='WandbLoggerHook', init_kwargs={'project':"hubmap", 'entity':"peterjaq"}),
         # dict(type='PaviLoggerHook') # for internal services
     ])
 # yapf:enable
