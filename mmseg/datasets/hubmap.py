@@ -12,14 +12,14 @@ class HuBMAPDataset(CustomDataset):
     ``seg_map_suffix`` are both fixed to '.png'.
     """
 
-    CLASSES = ('positive')
+    CLASSES = ('background', 'positive')
 
-    PALETTE = [[1, 1, 1]]
+    PALETTE = [[0, 0, 0], [1, 1, 1]]
 
     def __init__(self, **kwargs):
         super(HuBMAPDataset, self).__init__(
             img_suffix='.png',
             seg_map_suffix='.png',
-            reduce_zero_label=True,
+            reduce_zero_label=False,
             **kwargs)
 
